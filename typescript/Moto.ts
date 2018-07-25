@@ -5,4 +5,8 @@ export default class Moto extends Veiculo {
     super();
     this.modelo = modelo;
   }
+
+  public acelerar():void {
+    this.velocidade += 20;
+  }
 }
