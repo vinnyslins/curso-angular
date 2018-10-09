@@ -13,6 +13,7 @@ export class PainelComponent implements OnInit {
   public resposta: string;
   public rodada = 0;
   public rodadaFrase: Frase;
+  public progresso = 0;
 
   constructor() {
     this.rodadaFrase = this.frases[this.rodada];
@@ -29,6 +30,7 @@ export class PainelComponent implements OnInit {
     if (this.rodadaFrase.frasePtBr === this.resposta) {
       this.rodada++;
       this.rodadaFrase = this.frases[this.rodada];
+      this.progresso += (100 / this.frases.length);
     }
   }
 }
