@@ -14,6 +14,7 @@ export class PainelComponent implements OnInit {
   public rodada = 0;
   public rodadaFrase: Frase;
   public progresso = 0;
+  public tentativas = 3;
 
   constructor() {
     this.atualizaRodada();
@@ -31,6 +32,11 @@ export class PainelComponent implements OnInit {
       this.rodada++;
       this.atualizaRodada();
       this.progresso += (100 / this.frases.length);
+    } else {
+      this.tentativas--;
+      if (this.tentativas < 0) {
+        alert('Você perdeu todas as tentativas!');
+      }
     }
   }
 
